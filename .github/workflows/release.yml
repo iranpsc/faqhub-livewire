@@ -49,7 +49,7 @@ jobs:
 
       - name: Push changes to repository
         run: |
-          git push origin main --follow-tags
+          git push origin master --follow-tags
 
       - name: Generate tag name from package.json
         id: generate_tag
