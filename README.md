@@ -1,66 +1,140 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# faqhub-livewire
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Contribution](#contribution)
+- [Development Rules](#development-rules)
+- [FAQ](#faq)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Introduction
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This repository, **faqhub-livewire**, is part of the national Iranian metaverse project, MetaRang. The goal of this project is to create a content management platform for community discussions and to facilitate knowledge sharing within the Iranian national metaverse. The **faqhub-livewire** project aims to enhance the user experience by providing a structured question-and-answer platform, supporting the citizens of MetaRang in their virtual engagement and collaboration.
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. Clone the Repository
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+To begin, you need to clone the repository to your local machine. Run the following command in your terminal:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+git clone https://github.com/iranpsc/faqhub-livewire.git
+```
 
-## Laravel Sponsors
+### 2. Navigate to the Project Directory
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Once you have cloned the repository, navigate to the project directory:
 
-### Premium Partners
+```bash
+cd faqhub-livewire
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 3. Install Dependencies
 
-## Contributing
+To install the necessary dependencies, you need to run the following command:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+Additionally, you need to install JavaScript dependencies:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+npm install
+```
 
-## Security Vulnerabilities
+### 4. Set Up Environment File
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Duplicate the `.env.example` file to create a new `.env` file:
 
-## License
+```bash
+cp .env.example .env
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Update the `.env` file with your database credentials and other configuration settings as required.
+
+### 5. Generate Application Key
+
+Generate the application key by running the following command:
+
+```bash
+php artisan key:generate
+```
+
+## Running the Project
+
+### 6. Run Migrations
+
+To create the required database tables, run the following command:
+
+```bash
+php artisan migrate
+```
+
+### 7. Start the API Server
+
+The **faqhub-livewire** project relies on an API running on port 8001. To start the API server, open a new terminal window or tab, navigate to the API project directory (`faqhub-api-collection`), and run:
+
+```bash
+php artisan serve --port=8001
+```
+
+This will start the API server on `http://localhost:8001`.
+
+### 8. Start the Frontend Development Server
+
+To start the frontend development server, use the following command:
+
+```bash
+php artisan serve
+```
+
+For front-end development, you may also need to run:
+
+```bash
+npm run dev
+```
+
+Ensure both the API and frontend servers are running simultaneously for proper functionality of the project.
+
+### 9. API Connection
+
+To connect the frontend with the API, make sure the **faqhub-api-collection** repository is running on port 8001. The frontend is configured to make requests to the API at `http://localhost:8001`. Ensure both servers are up and running for seamless operation.
+
+## Contribution
+
+We welcome contributions to improve the **faqhub-livewire** project. To contribute, please follow these steps:
+
+1. **Fork the Project:** Fork the repository and work on your own copy.
+2. **Create a New Branch:** For each feature or change, create a separate branch:
+
+   ```bash
+   git checkout -b feature-name
+   ```
+
+3. **Regular Commits:** Save your changes with detailed and meaningful commit messages:
+
+   ```bash
+   git commit -m "Detailed explanation of the change"
+   ```
+
+4. **Submit a Pull Request:** After making changes and ensuring everything works properly, submit a pull request for review.
+
+## Development Rules
+
+For developers working on **faqhub-livewire**, please follow these guidelines:
+
+1. **Use Separate Branches:** Each new feature or bug fix must be implemented in a separate branch. The branch name should reflect the type of change (e.g., `feature-new-ui`, `bugfix-user-auth`).
+2. **Regular and Clear Commits:** Ensure each commit is descriptive and communicates the intent of the change clearly.
+3. **Review and Approval:** All pull requests must be reviewed by at least one other team member before merging.
+4. **Adhere to Coding Standards:** Use tools like PHP-CS-Fixer and ESLint to maintain coding standards and consistency.
+5. **Code Cleanup:** Remove any unused or test code before submitting a pull request to maintain the project's quality.
+
+## FAQ
+
+If you face any issues or have questions, please use the **Issues** section on GitHub to report bugs or requests. We are committed to improving the project and appreciate your feedback.
+```
+
