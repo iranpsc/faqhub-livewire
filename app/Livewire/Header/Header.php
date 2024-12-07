@@ -80,7 +80,7 @@ class Header extends Component
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
         ])->get($this->baseUrl . 'questions/search', [
-            'search' => $this->query,
+            'query' => $this->query,
         ]);
         if ($response->successful()) {
             $this->questions = json_decode($response->body());

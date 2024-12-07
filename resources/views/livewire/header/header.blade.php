@@ -3,7 +3,7 @@
         <div
             class="flex justify-between w-full bg-white dark:bg-[#0F0F0E] py-4 px-6 drop-shadow-[0_1px_3px_rgba(0,0,0,0.05)] relative ">
             <div class="w-2/3">
-                <input wire:model="query" wire:keydown="searchQuestions" type="text" id="searchInput2"
+                <input wire:model.debounce.2000ms="query" wire:keydown="searchQuestions" type="text" id="searchInput2"
                        placeholder="سوال یا کلمه مورد نظر خود را جستجو کنید"
                        class=" mr-5 bg-[#FFFFFF] dark:bg-black border border-[#ECEEF3] focus:border-[#2667FF] focus:ring-[#2667FF]   dark:focus:border-[#FFC700] dark:focus:ring-[#FFC700] text-[#A8ABB4] placeholder-[#A8ABB4] focus:ring-1 p-3 rounded-xl max-w-sm w-full ">
             </div>
