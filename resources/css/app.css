@@ -1,3 +1,418 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: 'AzarMehr';
+    src: url("../../public/style/font/AzarMehr-DS2-FD-Bold.ttf") format('truetype');
+    font-weight: 700; /* Bold weight */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'AzarMehr';
+    src: url("../../public/style/font/AzarMehr-FD[DSTY\,KSHD\,wght].ttf") format('truetype');
+    font-weight: 400; /* Normal weight */
+    font-style: normal;
+  }
+  @font-face {
+    font-family:'rokh';
+    src: url("../../public/style/font/RokhFaNum-Bold.ttf") format('truetype');
+    font-weight: 700; /* Bold weight */
+  }
+  
+  
+  
+  .border-s{
+    @apply border-t-2 border-pink-600
+  }
+  .inner-shadow-dark{
+    box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.37);
+  }
+  .inner-shadow-c{
+    @apply  inner-shadow-dark
+  }
+  
+  
+  .sidenav {
+    @apply h-full w-0 top-0 right-0  hidden  lg:w-[75px] transition-[1.5s] duration-300 text-right fixed z-10  lg:flex flex-col  items-center pt-0 bg-[#FCFCFC] dark:bg-[#0F0F0E]  
+  }
+  .sidnav-t{
+    @apply transition-[1.5s] duration-300 w-[87%] lg:w-[25%] xl:w-[20%] 2xl:w-[17%]  fixed  h-full z-50 top-0  right-0 
+  }
+  .main-content-smallNav{
+    @apply w-full lg:w-[93%] xl:w-[95%] 2xl:w-[96%] 3xl:w-[97%]  lg:mr-auto transition-[0.5s] duration-300 
+  }
+  .main-content-activeNav{
+    @apply w-full  lg:w-[75%] xl:w-[80%] 2xl:w-[83%] lg:mr-auto transition-[0.5s] duration-300 blur-sm lg:blur-0 
+  }
+  
+  .main-content-smallNav2{
+    @apply w-full lg:w-[93%] xl:w-[95%] 2xl:w-[96%] 3xl:w-[97%]  lg:mr-auto transition-[0.5s] duration-300 
+  }
+  .main-content-activeNav2{
+    @apply w-full  lg:w-[75%] xl:w-[80%] 2xl:w-[83%] lg:mr-auto transition-[0.5s] duration-300 blur-sm lg:blur-0 
+  }
+  #open-nav-btn{
+    @apply   lg:w-10 lg:h-10 p-3 lg:px-2 rounded-full cursor-pointer flex lg:justify-center  z-50
+  }
+  
+  
+  /* tree view menu */
+  .tree {
+    direction: rtl;
+  }
+  
+  .tree input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  
+  .tree input~ul {
+    display: none;
+    padding-right: 20px;
+  }
+  
+  .tree input:checked~ul {
+    display: block;
+  }
+  
+  /* ————————————————————–
+  Tree rows
+  */
+  .tree li {
+    line-height: 1.2;
+    position: relative;
+  }
+  
+  .tree ul li {
+    padding: 3px 1em 0 0;
+  }
+  
+  /* تغییر در اینجا */
+  .tree>li:last-child {
+    padding-bottom: 0;
+  }
+  
+  /* ————————————————————–
+  Tree labels
+  */
+  .tree_label {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px;
+    padding-right: 0px;
+  }
+  
+  label.tree_label {
+    cursor: pointer;
+  }
+  
+  /* ————————————————————–
+  Tree expanded icon
+  */
+  label.tree_label:before {
+    position: relative;
+    z-index: 1;
+    float: left;
+    /* تغییر در اینجا */
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    content: '+';
+    text-align: center;
+    line-height: .9em;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+  
+  :checked~label.tree_label:before {
+    content: '– ';
+    
+  }
+  /* ————————————————————–
+  Tree branches
+  */
+  .tree li:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    /* تغییر در اینجا */
+    right: -.5em;
+    /* تغییر در اینجا */
+    display: block;
+    width: 0;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-radius: 0 0 .89em 0;
+    content: "";
+    border-color: #868B90;
+  }
+  
+  .treedark li:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    /* تغییر در اینجا */
+    right: -.5em;
+    /* تغییر در اینجا */
+    display: block;
+    width: 0;
+    border-bottom: 2px solid red;
+    border-right: 2px solid red;
+    border-radius: 0 0 .89em 0;
+    content: "";
+  }
+  
+  .tree_label:after {
+    position: absolute;
+    top: 0;
+    left: auto;
+    /* تغییر در اینجا */
+    right: -1.5em;
+    /* تغییر در اینجا */
+    display: block;
+    height: 0.5em;
+    width: 1em;
+    content: '';
+  }
+  
+  label.tree_label:after {
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-color: #868B90;
+    border-radius: 0 0 45px 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0;
+    top: 0;
+    /* 0.5em بود  */
+  }
+  
+  :checked~label.tree_label:after {
+    height: auto;
+  }
+  
+  .tree li:last-child:before {
+    height: 1em;
+    bottom: auto;
+  }
+  
+  .tree>li:last-child:before {
+    display: none;
+  }
+  
+  .tree_custom {
+    display: block;
+    background: #eee;
+    padding: 1em;
+    border-radius: 0.9em;
+  }
+  
+  
+  
+  
+  
+  
+  .like {
+    direction: rtl;
+  }
+  
+  .like input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+  .like_label {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  
+  .more-items{
+   display: none;
+  }
+  
+  .load-more{
+  
+  }
+  .more-items2{
+    display: none;
+   }
+   
+   .load-more2{
+   
+   }
+   .more-items3{
+    display: none;
+   }
+   
+   .load-more3{
+   
+   }
+   .more-items4{
+    display: none;
+   }
+   
+   .load-more4{
+   
+   }
+   .more-com{
+    display: none;
+   }
+   
+   .load-more-c{
+   
+   }
+  
+   .zoomable {
+    position: relative;
+    overflow: hidden;
+  
+  }
+  .zoomable__img {
+    transform-origin: var(--zoom-pos-x, 0%) var(--zoom-pos-y, 0%);
+    transition: transform 0.15s linear;
+  }
+  .zoomable--zoomed .zoomable__img {
+    cursor: zoom-in;
+    transform: scale(var(--zoom, 2));
+  }
+  @layer components {
+    .hidden {
+      display: none;
+    }
+  
+    .block {
+      display: block;
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  
+    .fade-in {
+      animation: fadeIn 0.5s ease-out forwards;
+      display: block;
+    }
+  
+    .fade-out {
+      animation: fadeOut 0.5s ease-out forwards;
+    }
+  }
+  .is-invalid{
+    @apply border-[#EB5757]
+  }
+    .invalid-feedback{
+      @apply text-[#EB5757]   text-xs flex gap-2 items-center font-normal
+    }
+  
+    .overflow-y-auto::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent;
+      overflow-x: auto;
+  
+    }
+  
+    .overflow-y-auto::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: transparent;
+      overflow-x: auto;
+      border-radius: 10px;
+    }
+  
+    .overflow-y-auto::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+  
+      background-color: #DFE2EB;
+      overflow-x: auto;
+    }
+  
+    /* Dark mode scrollbar styles */
+  
+    .dark .overflow-y-auto::-webkit-scrollbar-thumb {
+      background-color: #191B21;
+    }
+  
+  
+  
+    .searchScroll::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #F4F4F4;
+      overflow-x: auto;
+      padding: 5px;
+    }
+  
+    .dark .searchScroll::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: black;
+      overflow-x: auto;
+      width: 20px;
+      padding: 5px;
+    }
+  
+    .searchScroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: #F4F4F4;
+      overflow-x: auto;
+      border-radius: 10px;
+      padding: 5px;
+  
+    }
+  
+  
+    .searchScroll::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      padding: 5px;
+      background-color: #DFE2EB;
+      overflow-x: auto;
+    }
+  
+    /* Dark mode scrollbar styles */
+  
+    .dark .searchScroll::-webkit-scrollbar-thumb {
+      background-color: #191B21;
+    }
+    .suggestions {
+        max-height: 0;
+         
+        transition: max-height 0.3s ease-out;
+        z-index: 8000;
+      }
+      .suggestions.expand-height {
+        max-height: 500px; /* Adjust this value as needed */
+      
+      }
+  
+  
