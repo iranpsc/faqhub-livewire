@@ -154,7 +154,7 @@
                 <div class="flex gap-4">
                     <select
                         class=" text-xs md:text-base w-max bg-[#FFFFFF] dark:bg-[#0C0D0F] border-[#F4F4F4] dark:border-[#33353B] text-[#262626] dark:text-[#84858F] rounded-xl py-2 pl-4 pr-8">
-                        <option value="1" selected="">برجسب ها</option>
+                        <option value="" selected>برچسب ها را انتخاب کنید</option>
                         <option value="0">مقالات</option>
                     </select>
 
