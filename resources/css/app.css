@@ -414,5 +414,29 @@
         max-height: 500px; /* Adjust this value as needed */
       
       }
+      #hiddenDiv3 {
+        transform: translateY(-30%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    #hiddenDiv3.active {
+        transform: translateY(0);
+
+        opacity: 1;
+
+    }
+    #hiddenDiv4 {
+      transform: translateY(-30%);
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  #hiddenDiv4.active {
+      transform: translateY(0);
+
+      opacity: 1;
+
+  }
   
   

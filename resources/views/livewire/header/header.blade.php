@@ -131,30 +131,27 @@
                         <textarea cols="15" rows="15" wire:model="content"></textarea>
                     </div>
                 </div>
-                <div class="flex flex-col gap-2 ">
-                    <span class="text-[#0F0F0E] text-sm dark:text-[#FCFCFC]">برچسب ها</span>
-                    <p class="text-[#5A5F66] text-xs font-normal dark:text-[#A0A0AB]">مثال : سوالی درباره کود مناسب
-                        درختان نوشته
-                        اید پس
-                        برچسب ها میتواند ( کود مناسب ، تغذیه درختان ، مواد غذایی برای درخت ، کود برای رشد درخت ، رشد
-                        بهتر درخت ) باشد .
-                    </p>
-                    <!-- مولتی سلکت -->
-                    <select class="my-select" multiple="multiple" style="width: 100%;">
-                        <option value="1">گزینه 1</option>
-                        <option value="2">گزینه 2</option>
-                        <option value="3">گزینه 3</option>
-                        <option value="4">گزینه 4</option>
-                    </select>
+                <div class="flex gap-4 relative">
+                    <div class="w-full ">
+                        <input type="text" id="searchInput4" placeholder="سوال یا کلمه مورد نظر خود را جستجو کنید"
+                            class="bg-[#FFFFFF] dark:bg-black border border-[#ECEEF3] focus:border-[#2667FF] focus:ring-[#2667FF] dark:focus:border-[#FFC700] dark:focus:ring-[#FFC700] text-[#A8ABB4] placeholder-[#A8ABB4] focus:ring-1 p-2 rounded-xl w-full">
+                    </div>
 
-                    <!-- ناحیه نمایش برچسب‌ها -->
-                    <div class="tags-container"></div>
+                    <div id="hiddenDiv4"
+                        class="shadow-[0_0_15px_3px_rgba(0,0,0,0.3)] bg-white dark:bg-[#0C0D0F] w-full absolute top-14 right-0 px-3 transition-transform duration-500 transform -translate-y-full opacity-0 z-10 overflow-hidden rounded-xl">
+                        <div class="overflow-y-scroll searchScroll h-full py-5 w-full">
+                            <div class="pb-7 flex flex-col gap-3">
+                                <span class="text-[#A8ABB4] cursor-pointer">34 مورد یافت شد</span>
+                                <span class="text-[#A8ABB4] cursor-pointer">test</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
             <div>
                 <button wire:click="createNewQuestion"
-                        class="py-2 bg-primery-blue px-4 text-sm md:w-[141px] h-[48px] text-white rounded-[10px]  w-full dark:bg-dark-yellow ">
+                        class="py-2 mt-5 bg-primery-blue px-4 text-sm md:w-[141px] h-[48px] text-white rounded-[10px]  w-full dark:bg-dark-yellow ">
                     ثبت
                     سوال
                 </button>
@@ -162,4 +159,15 @@
         </div>
     </div>
     <!-- qa modal end -->
+    <script>
+        document.getElementById('searchInput4').addEventListener('input', function() {
+    const hiddenDiv = document.getElementById('hiddenDiv4');
+    if (this.value.length > 0) {
+        hiddenDiv.classList.add('active');
+    } else {
+
+        hiddenDiv.classList.remove('active');
+    }
+});
+    </script>
 </div>

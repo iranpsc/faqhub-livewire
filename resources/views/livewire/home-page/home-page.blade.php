@@ -159,7 +159,7 @@
                     </div>
 
                     <div id="hiddenDiv3"
-                        class="bg-white dark:bg-[#0C0D0F] w-full absolute top-16 right-0 px-3 transition-transform duration-500 transform -translate-y-full opacity-0 z-10 overflow-hidden rounded-xl">
+                        class="shadow-[0_0_15px_3px_rgba(0,0,0,0.3)] bg-white dark:bg-[#0C0D0F] w-full absolute top-16 right-0 px-3 transition-transform duration-500 transform -translate-y-full opacity-0 z-10 overflow-hidden rounded-xl">
                         <div class="overflow-y-scroll searchScroll h-full py-5 w-full">
                             <div class="pb-7 flex flex-col gap-3">
                                 <span class="text-[#A8ABB4] cursor-pointer">34 مورد یافت شد</span>
@@ -167,35 +167,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <style>
-                        #hiddenDiv3 {
-                            transform: translateY(-30%);
-                            opacity: 0;
-                            transition: transform 0.5s ease, opacity 0.5s ease;
-                        }
-
-                        #hiddenDiv3.active {
-                            transform: translateY(0);
-
-                            opacity: 1;
-
-                        }
-                    </style>
-                    <script>
-                        document.getElementById('searchInput3').addEventListener('input', function() {
-                            const hiddenDiv = document.getElementById('hiddenDiv3');
-                            if (this.value.length > 0) {
-                                hiddenDiv.classList.add('active');
-                            } else {
-
-                                hiddenDiv.classList.remove('active');
-                            }
-                        });
-                    </script>
-
-
-
                 </div>
             </div>
         </div>
@@ -765,4 +736,15 @@
         <livewire:home-page.active-users />
     </section>
     {{-- ACTIVE USERS SECTION --}}
+    <script>
+        document.getElementById('searchInput3').addEventListener('input', function() {
+            const hiddenDiv = document.getElementById('hiddenDiv3');
+            if (this.value.length > 0) {
+                hiddenDiv.classList.add('active');
+            } else {
+
+                hiddenDiv.classList.remove('active');
+            }
+        });
+    </script>
 </div>
