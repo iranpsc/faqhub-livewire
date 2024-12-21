@@ -4,13 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@yield('title', 'عنوان پیشفرض')</title>
+    <meta name="description" content="@yield('meta_description', 'توضیحات پیشفرض')">
+    <meta name="keywords" content="@yield('meta_keywords', 'کلمات کلیدی پیشفرض')">
+
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+
+    <meta property="og:title" content="@yield('og_title', 'عنوان پیشفرض OG')">
+    <meta property="og:description" content="@yield('og_description', 'توضیحات پیشفرض OG')">
+    <meta property="og:image" content="@yield('og_image', asset('images/default-og-image.jpg'))">
+    <meta property="og:url" content="@yield('og_url', url()->current())">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+
+        
     @vite('resources/css/app.css')
     @if(request()->is('home'))
         <link rel="stylesheet" href="{{ asset('style/main.css') }}">
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
-        <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- JavaScript Select2 -->
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
         
