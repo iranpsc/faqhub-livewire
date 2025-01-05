@@ -14,48 +14,7 @@
 @section('og_type', 'article')
 
 <div>
-    <script type="application/ld+json">
-        {
-          "@context": "http://schema.org",
-          "@type": "QAPage",
-          "mainEntity": {
-            "@type": "Question",
-            "name": "{{ $question['data']['title'] ?? 'Default Question Title' }}",
-            "text": "{{ $question['data']['content'] ?? 'Default question content' }}",
-            "answerCount": {{ $question['data']['answers_count'] ?? 0 }},
-            "upvoteCount": {{ $question['data']['likes'] ?? 0 }},
-            "dateCreated": "{{ $question['data']['created_at'] ?? now() }}",
-            "author": {
-              "@type": "Person",
-              "name": "{{ $question['data']['user']['name'] ?? 'Anonymous' }}"
-            },
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{ $question['data']['best_answer']['content'] ?? 'no answer content' }}",
-              "datePublished": "{{ $question['data']['best_answer']['created_at'] ?? now() }}",
-              "author": {
-                "@type": "Person",
-                "name": "{{ $question['data']['best_answer']['user']['name'] ?? 'Anonymous' }}"
-              },
-              "upvoteCount": {{ $question['data']['best_answer']['likes'] ?? 0 }}
-            },
-            "suggestedAnswer": [
-              {
-                "@type": "Answer",
-                "text": "Example of another answer to the question.",
-                "datePublished": "2022-01-01",
-                "author": {
-                  "@type": "Person",
-                  "name": "Another User"
-                },
-                "upvoteCount": 5
-              }
-            ]
-          }
-        }
-        </script>
-        
-        
+   
     <section class="w-full mx-auto max-w-[1500px] mt-10 px-5">
         <div class="flex flex-col gap-6 p-4">
             <div class="w-full grid grid-cols-2  justify-between items-center gap-y-4">

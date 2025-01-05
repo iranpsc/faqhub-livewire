@@ -5,19 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@yield('title', 'عنوان پیشفرض')</title>
-    <meta name="description" content="@yield('meta_description', 'توضیحات پیشفرض')">
-    <meta name="keywords" content="@yield('meta_keywords', 'کلمات کلیدی پیشفرض')">
-
+    <title>@yield('title', ' حم')</title>
+    <meta name="description" content="@yield('meta_description', 'FAQHub مرجعی جامع برای یافتن پاسخ سوالات متداول در زمینه‌های مختلف از جمله فناوری، کسب‌وکار، آموزش و بیشتر.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'سوالات متداول, فناوری, کسب‌وکار, آموزش, FAQHub')">
+    
     <link rel="canonical" href="@yield('canonical', url()->current())">
-
-    <meta property="og:title" content="@yield('og_title', 'عنوان پیشفرض OG')">
-    <meta property="og:description" content="@yield('og_description', 'توضیحات پیشفرض OG')">
-    <meta property="og:image" content="@yield('og_image', asset('images/default-og-image.jpg'))">
+    
+    <meta property="og:title" content="@yield('og_title', 'FAQHub - مرکز پاسخگویی به سوالات متداول')">
+    <meta property="og:description" content="@yield('og_description', 'FAQHub مرجعی جامع برای یافتن پاسخ سوالات متداول در زمینه‌های مختلف از جمله فناوری، کسب‌وکار، آموزش و بیشتر.')">
+    <meta property="og:image" content="@yield('og_image', asset('images/faq.png'))">
     <meta property="og:url" content="@yield('og_url', url()->current())">
     <meta property="og:type" content="@yield('og_type', 'website')">
+    <link rel="icon" href="{{ asset('images/faq.png') }}" type="image/x-icon">
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "name": "انجمن حم",
+                  "url": "https://faqhub.ir/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://faqhub.ir/logo.png"
+                  },
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+989127855049",
+                    "contactType": "Customer Support"
+                  }
+                },
+                {
+                  "@type": "WebPage",
+                  "name": "FAQHub - مرجع پرسش و پاسخ",
+                  "url": "https://faqhub.ir/",
+                  "description": "FAQHub مرجع پرسش و پاسخ‌های متداول در موضوعات مختلف از تکنولوژی تا کسب‌وکار."
+                }
+              ]
+            }
+            </script>
+            
 
-        
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "دسته‌بندی‌های محبوب",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "متاورس",
+                "url": "https://faqhub.ir/categories/metaverse"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "تکنولوژی",
+                "url": "https://faqhub.ir/categories/technology"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "کسب‌وکار",
+                "url": "https://faqhub.ir/categories/business"
+              }
+            ]
+          }
+          
+        </script>
+
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "FAQHub",
+              "url": "https://faqhub.ir/",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://faqhub.ir/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+            </script>
+            
+            
     @vite('resources/css/app.css')
     @if(request()->is('home'))
         <link rel="stylesheet" href="{{ asset('style/main.css') }}">
@@ -92,6 +164,7 @@
                 z-index: 50000;
             }
         </style>
+
     @else
         {{-- <link rel="stylesheet" href="{{ asset('style/main.css') }}"> --}}
         <script src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
